@@ -6,8 +6,8 @@ use fast2s::{convert, replace};
 
 fn criterion_benchmark(c: &mut Criterion) {
     // as character_converter is too slow I have to change to sample size to 10
-    let mut g = c.benchmark_group("sample 10");
-    g.sample_size(10);
+    let mut g = c.benchmark_group("sample 100");
+    g.sample_size(100);
 
     let zht = include_str!("math_zht.txt");
     let zhc = include_str!("math_zhc.txt");
@@ -16,7 +16,7 @@ fn criterion_benchmark(c: &mut Criterion) {
     let mut zhc1 = zhc.to_string();
     let mut en1 = en.to_string();
     let opencc = opencc_rust::OpenCC::new(opencc_rust::DefaultConfig::T2S).unwrap();
-    let converter = character_converter::CharacterConverter::new();
+    // let converter = character_converter::CharacterConverter::new();
 
     let convert_tests = [("t2s: zht", zht), ("t2s: zhc", zhc), ("t2s: en", en)];
     let mut replace_tests = [
@@ -46,12 +46,13 @@ fn criterion_benchmark(c: &mut Criterion) {
             });
         });
 
-        let id = format!("character_converter {}", name);
-        g.bench_function(&id, |b| {
-            b.iter(|| {
-                converter.traditional_to_simplified(data);
-            });
-        });
+        // disabled: too slow
+        // let id = format!("character_converter {}", name);
+        // g.bench_function(&id, |b| {
+        //     b.iter(|| {
+        //         converter.traditional_to_simplified(data);
+        //     });
+        // });
     }
 
     for (name, data) in replace_tests.iter_mut() {

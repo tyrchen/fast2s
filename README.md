@@ -20,17 +20,17 @@ Test result (convert and return new string):
 
 | tests | fast2s | simplet2s-rs | opencc-rust | character_conver |
 | ----- | ------ | ------------ | ----------- | ---------------- |
-| zht   | 446us  | 616us        | 5.08ms      | 1.23s            |
-| zhc   | 491us  | 798us        | 6.08ms      | 2.87s            |
-| en    | 68us   | 2.82ms       | 12.24ms     | 26.11s           |
+| zht   | 596us  | 579us        | 4.93ms      | 1.23s            |
+| zhc   | 643us  | 750us        | 5.89ms      | 2.87s            |
+| en    | 59us   | 2.68ms       | 11.46ms     | 26.11s           |
 
 Test result (mutate existing string):
 
 | tests | fast2s | simplet2s-rs | opencc-rust | character_conver |
 | ----- | ------ | ------------ | ----------- | ---------------- |
-| zht   | 438us  | N/A          | N/A         | N/A              |
-| zhc   | 503us  | N/A          | N/A         | N/A              |
-| en    | 34us   | N/A          | N/A         | N/A              |
+| zht   | 524us  | N/A          | N/A         | N/A              |
+| zhc   | 609us  | N/A          | N/A         | N/A              |
+| en    | 48us   | N/A          | N/A         | N/A              |
 
 Note:
 
