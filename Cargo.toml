@@ -1,6 +1,6 @@
 [package]
 name = "fast2s"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Tyr Chen <tyr.chen@gmail.com>"]
 edition = "2021"
 license = "MIT"
@@ -18,16 +18,5 @@ categories = ["text-processing", "localization", "internationalization", "value-
 lazy_static = "1"
 fst = "0.4"
 
-[dev-dependencies]
-criterion = "0.3"
-opencc-rust = "1"
-simplet2s = "0.2"
-character_converter = "1"
-
-
 [build-dependencies]
 fst = "0.4"
-
-[[bench]]
-name = "simple"
-harness = false

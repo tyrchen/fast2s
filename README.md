@@ -37,7 +37,7 @@ Note:
 1. zht means load "math_zht.txt" and translate, zhc means load "math_zhc.txt" (all Simplified Chinese) and translate, en means load "math_en.txt" (all English) and translate.
 2. N/A means not supported.
 
-Please do not trust the benchmark result directly, you shall run it in your local environment.
+Please do not trust the benchmark result directly, you shall run it in your local environment. See [how to run benchmark](./benches/README.md).
 
 ## Credits
 

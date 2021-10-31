@@ -1,0 +1,15 @@
+[package]
+name = "simple"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+fast2s = { path = "../.." }
+criterion = "0.3"
+opencc-rust = "1"
+simplet2s = "0.2"
+character_converter = "1"
+
+[[bench]]
+name = "simple"
+harness = false

@@ -37,8 +37,6 @@ jobs:
           profile: minimal
           toolchain: stable
           override: true
-      - name: Install opencc
-        run: sudo apt-get install -y opencc
       - name: Check code format
         run: cargo fmt -- --check
       - name: Check the package for errors

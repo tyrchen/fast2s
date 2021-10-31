@@ -6,10 +6,10 @@ use std::path::Path;
 
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
-    println!("cargo:rerun-if-changed=t2s.txt");
+    println!("cargo:rerun-if-changed=src/t2s.txt");
 
     let out_dir = env::var_os("OUT_DIR").unwrap();
-    let data = get_sorted_kv("t2s.txt");
+    let data = get_sorted_kv("src/t2s.txt");
     let out_file = Path::new(&out_dir).join("map.fst");
 
     build_map(data, out_file);
