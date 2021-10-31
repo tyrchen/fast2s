@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["convert","convert the string containing any tranditional Chinese to simplified Chinese"],["replace","modify the string containing any tranditional Chinese to simplified Chinese"]]});
