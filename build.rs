@@ -1,16 +1,22 @@
 use fst::MapBuilder;
+use std::env;
 use std::fs::File;
 use std::io::{self, BufRead};
+use std::path::Path;
 
 fn main() {
+    println!("cargo:rerun-if-changed=build.rs");
     println!("cargo:rerun-if-changed=t2s.txt");
-    let data = get_sorted_kv("t2s.txt");
 
-    build_map(data);
+    let out_dir = env::var_os("OUT_DIR").unwrap();
+    let data = get_sorted_kv("t2s.txt");
+    let out_file = Path::new(&out_dir).join("map.fst");
+
+    build_map(data, out_file);
 }
 
-fn build_map(data: Vec<([u8; 4], u64)>) {
-    let wtr = io::BufWriter::new(File::create("map.fst").unwrap());
+fn build_map(data: Vec<([u8; 4], u64)>, out_file: impl AsRef<Path>) {
+    let wtr = io::BufWriter::new(File::create(out_file).unwrap());
     let mut build = MapBuilder::new(wtr).unwrap();
     for (k, v) in data.into_iter() {
         build.insert(k, v).unwrap();

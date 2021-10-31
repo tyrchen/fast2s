@@ -3,7 +3,7 @@ use std::slice::from_raw_parts_mut;
 use fst::Map;
 use lazy_static::lazy_static;
 
-static FST_DATA: &[u8] = include_bytes!("../map.fst");
+static FST_DATA: &[u8] = include_bytes!(concat!(env!("OUT_DIR"), "/map.fst"));
 
 lazy_static! {
     /// state machine for the translation
