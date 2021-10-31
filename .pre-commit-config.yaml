@@ -17,6 +17,13 @@ repos:
       - id: black
   - repo: local
     hooks:
+      - id: lychee
+        name: lychee markdown
+        description: Check links
+        entry: bash -c 'lychee *.md --no-progress'
+        language: rust
+        files: \.md$
+        args: []
       - id: cargo-fmt
         name: cargo fmt
         description: Format files with rustfmt.
@@ -24,13 +31,13 @@ repos:
         language: rust
         files: \.rs$
         args: []
-      # - id: cargo-deny
-      #   name: cargo deny check
-      #   description: Check cargo depencencies
-      #   entry: bash -c 'cargo deny check'
-      #   language: rust
-      #   files: \.rs$
-      #   args: []
+      - id: cargo-deny
+        name: cargo deny check
+        description: Check cargo depencencies
+        entry: bash -c 'cargo deny check'
+        language: rust
+        files: \.rs$
+        args: []
       - id: cargo-check
         name: cargo check
         description: Check the package for errors.

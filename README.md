@@ -14,7 +14,7 @@ assert_eq!(&s, "企画 计画 企划 计划 画图 画画");
 
 ## Benchmark
 
-See [simple.rs]((./benches/simple.rs)) under benches directory. I compared the result with [opencc-rust](https://github.com/magiclen/opencc-rust), [simplet2s-rs](https://github.com/bosondata/simplet2s-rs), and [character_converter](https://github.com/sotch-pr35mac/character_converter). As character_converter is too slow, I have to change the sample size to 10 to not wait super long.
+See [simple.rs](benches/simple/benches/simple.rs) under benches directory. I compared the result with [opencc-rust](https://github.com/magiclen/opencc-rust), [simplet2s-rs](https://github.com/bosondata/simplet2s-rs), and [character_converter](https://github.com/sotch-pr35mac/character_converter). As character_converter is too slow, I have to change the sample size to 10 to not wait super long.
 
 Test result (convert and return new string):
 
@@ -41,4 +41,4 @@ Please do not trust the benchmark result directly, you shall run it in your loca
 
 ## Credits
 
-[t2s.txt](./t2s.txt) is borrored from [simplet2s](https://github.com/bosondata/simplet2s-rs/blob/master/src/t2s.txt).
+[t2s.txt](src/t2s.txt) is borrored from [simplet2s](https://github.com/bosondata/simplet2s-rs/blob/master/src/t2s.txt).
