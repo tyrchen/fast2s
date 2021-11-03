@@ -1,15 +1,18 @@
-use std::collections::{HashMap, HashSet};
+use hashbrown::{HashMap, HashSet};
 
+use crate::{hashmap, hashset};
 use lazy_static::lazy_static;
-use maplit::{hashmap, hashset};
 
 type Word = [char; 2];
 
-static FST_DATA: &[u8] = include_bytes!(concat!(env!("OUT_DIR"), "/map.fst"));
+static MAP_DATA: &[u8] = include_bytes!(concat!(env!("OUT_DIR"), "/map.bin"));
 
 lazy_static! {
     /// state machine for the translation
-    static ref FST: fst::Map<&'static [u8]> = fst::Map::new(FST_DATA).unwrap();
+    static ref MAP: HashMap<char, char> = {
+        let data: Vec<(char, char)> = bincode::deserialize(MAP_DATA).unwrap();
+        data.into_iter().collect()
+    };
 
     // thanks https://github.com/bosondata/simplet2s-rs/blob/master/src/lib.rs#L8 for this special logic
     // Traditional Chinese -> Not convert case
@@ -58,17 +61,5 @@ pub fn special_convert(prev: char, cur: char, next: char) -> char {
             return *c;
         }
     }
-    FST.get(c2b(cur)).map(i2c).unwrap_or(cur)
-}
-
-#[inline(always)]
-fn c2b(c: char) -> [u8; 4] {
-    let i = c as u32;
-    i.to_be_bytes()
-}
-
-#[inline(always)]
-fn i2c(i: u64) -> char {
-    // SAFETY: the char is from precompiled FST, so it should exists
-    unsafe { char::from_u32_unchecked(i as _) }
+    *MAP.get(&cur).unwrap_or(&cur)
 }

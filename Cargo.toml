@@ -1,6 +1,6 @@
 [package]
 name = "fast2s"
-version = "0.2.1"
+version = "0.3.0"
 authors = ["Tyr Chen <tyr.chen@gmail.com>"]
 edition = "2021"
 license = "MIT"
@@ -15,13 +15,13 @@ keywords = ["chinese", "simplified", "traditional", "convert", "hanzi"]
 categories = ["text-processing", "localization", "internationalization", "value-formatting"]
 
 [dependencies]
-fst = "0.4"
+bincode = "1"
+hashbrown = "0.11"
 lazy_static = "1"
-maplit = "1"
 
 [build-dependencies]
-fst = "0.4"
+bincode = "1"
 
-[profile.release]
-lto = true
-codegen-units = 1
+#[profile.release]
+#lto = true
+#codegen-units = 1
