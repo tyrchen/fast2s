@@ -1,6 +1,7 @@
 use special::special_convert;
 use std::slice::from_raw_parts_mut;
 
+mod macros;
 mod special;
 
 /// convert the string containing any tranditional Chinese to simplified Chinese
@@ -98,6 +99,10 @@ mod tests {
             map.insert(
                 "英特尔宣布“漏洞门”应对计划：为5年内90%处理器提供补丁，下周末前完成",
                 "英特尔宣布“漏洞门”应对计划：为5年内90%处理器提供补丁，下周末前完成",
+            );
+            map.insert(
+                "hello world！this is a 非常特殊的企畫。",
+                "hello world！this is a 非常特殊的企划。",
             );
             map
         };
