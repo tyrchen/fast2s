@@ -1,3 +1,3 @@
 var N = null;var sourcesIndex = {};
-sourcesIndex["fast2s"] = {"name":"","files":["lib.rs","special.rs"]};
+sourcesIndex["fast2s"] = {"name":"","files":["lib.rs","macros.rs","special.rs"]};
 createSourceSidebar();

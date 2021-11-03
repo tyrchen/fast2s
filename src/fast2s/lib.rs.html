@@ -120,9 +120,15 @@
 <span id="120">120</span>
 <span id="121">121</span>
 <span id="122">122</span>
+<span id="123">123</span>
+<span id="124">124</span>
+<span id="125">125</span>
+<span id="126">126</span>
+<span id="127">127</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">special::special_convert</span>;
 <span class="kw">use</span> <span class="ident">std::slice::from_raw_parts_mut</span>;
 
+<span class="kw">mod</span> <span class="ident">macros</span>;
 <span class="kw">mod</span> <span class="ident">special</span>;
 
 <span class="doccomment">/// convert the string containing any tranditional Chinese to simplified Chinese</span>
@@ -220,6 +226,10 @@
             <span class="ident">map</span>.<span class="ident">insert</span>(
                 <span class="string">&quot;英特尔宣布“漏洞门”应对计划：为5年内90%处理器提供补丁，下周末前完成&quot;</span>,
                 <span class="string">&quot;英特尔宣布“漏洞门”应对计划：为5年内90%处理器提供补丁，下周末前完成&quot;</span>,
+            );
+            <span class="ident">map</span>.<span class="ident">insert</span>(
+                <span class="string">&quot;hello world！this is a 非常特殊的企畫。&quot;</span>,
+                <span class="string">&quot;hello world！this is a 非常特殊的企划。&quot;</span>,
             );
             <span class="ident">map</span>
         };

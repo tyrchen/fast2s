@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["convert","convert the string containing any tranditional Chinese to simplified Chinese"],["replace","modify the string containing any tranditional Chinese to simplified Chinese"]]});
+initSidebarItems({"fn":[["convert","convert the string containing any tranditional Chinese to simplified Chinese"],["replace","modify the string containing any tranditional Chinese to simplified Chinese"]],"macro":[["hashmap","Create a HashMap from a list of key-value pairs"],["hashset","Create a HashSet from a list of elements."]]});
