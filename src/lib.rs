@@ -104,6 +104,10 @@ mod tests {
                 "hello world！this is a 非常特殊的企畫。",
                 "hello world！this is a 非常特殊的企划。",
             );
+            map.insert(
+                "乾隆的乾兒子一邊乾淨利落地擲出了一個乾卦，一邊嘴裡嚼着芒果乾。",
+                "乾隆的干儿子一边干净利落地掷出了一个乾卦，一边嘴里嚼着芒果干。",
+            );
             map
         };
     }

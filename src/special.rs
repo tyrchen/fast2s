@@ -25,7 +25,8 @@ lazy_static! {
             '瞭' => hashset!{['瞭','望']},
             '麽' => hashset!{['幺','麽']},
             '幺' => hashset!{['幺','麽']},
-            '於' => hashset!{['樊','於']}
+            '於' => hashset!{['樊','於']},
+            '乾' => hashset!{['乾','隆'], ['乾', '坤'], ['乾', '卦']}
         }
     };
     // Traditional Chinese -> Special convert cases ( only convert in certain case )
@@ -35,7 +36,6 @@ lazy_static! {
             '藉' => hashmap!{['藉','口'] => '借', ['憑','藉'] => '借'},
             '著' => hashmap!{['看','著'] => '着'},
             '苧' => hashmap!{['苧','麻'] => '苎'},
-            '乾' => hashmap!{['乾','燥'] => '干', ['乾','爹'] => '干', ['餅','乾'] => '干', ['乾','枯'] => '干', ['乾','旱'] => '干'},
             // convert these chars use naive mapping if not in special cases
             '闔' => hashmap!{['闔','家'] => '合'},
             '鍾' => hashmap!{['鍾','書'] => '锺'},
